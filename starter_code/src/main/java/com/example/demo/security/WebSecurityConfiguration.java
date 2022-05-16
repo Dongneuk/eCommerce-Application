@@ -10,6 +10,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+// After defining the authentication and authorization modules,
+// we need to configure them on the Spring Security filter chain.
+// The WebSecurity class is a custom implementation of the default web security configuration provided by Spring Security.
+// In this class, we have overridden two overloaded methods:
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
@@ -22,6 +26,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
+    // configure(HttpSecurity) - Defines public resources. Below, we have set the SIGN_UP_URL endpoint as public.
+    // The http.cors() is used to make the Spring Security support
+    // the CORS (Cross-Origin Resource Sharing) and CSRF (Cross-Site Request Forgery).
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
@@ -39,6 +46,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+    // configure(AuthenticationManagerBuilder) -
+    // It declares the BCryptPasswordEncoder as the encoding technique, and loads user-specific data.
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.parentAuthenticationManager(authenticationManagerBean())

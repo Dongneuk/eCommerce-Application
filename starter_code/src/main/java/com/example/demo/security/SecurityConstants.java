@@ -1,5 +1,6 @@
 package com.example.demo.security;
 
+// This class contains the literal constants that are used in the JWTAuthenticationFilter class.
 public class SecurityConstants {
 
     public static final String SECRET = "oursecretkey";

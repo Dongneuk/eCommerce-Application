@@ -18,6 +18,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+// for holding a user's item
 @Entity
 @Table(name = "cart")
 public class Cart {

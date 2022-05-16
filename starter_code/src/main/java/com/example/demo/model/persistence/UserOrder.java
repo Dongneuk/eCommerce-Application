@@ -18,6 +18,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+// to hold information about submitted orders
 @Entity
 @Table(name = "user_order")
 public class UserOrder {

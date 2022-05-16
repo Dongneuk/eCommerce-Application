@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-@EnableJpaRepositories("com.example.demo.model.persistence.repositories")
-@EntityScan("com.example.demo.model.persistence")
+@EnableJpaRepositories("com.example.demo.model.persistence.repositories") // telling Spring that this package contains our data repositories.
+@EntityScan("com.example.demo.model.persistence") // telling Spring that this package contains our data models.
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class SareetaApplication {
 

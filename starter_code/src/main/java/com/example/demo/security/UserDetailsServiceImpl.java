@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.UserRepository;
 
+// It implements the UserDetailsService interface,
+// and defines only one method that retrieves the User object from the database:
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
