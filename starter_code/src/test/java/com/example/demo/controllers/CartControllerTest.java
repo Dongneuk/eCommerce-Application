@@ -24,8 +24,7 @@ import java.util.Optional;
 
 import static com.example.demo.mockConstants.MockConstants.getItem;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CartControllerTest {
@@ -74,6 +73,12 @@ public class CartControllerTest {
         assertEquals(BigDecimal.valueOf(2000), cart.getTotal());
     }
 
+    @Test(expected = RuntimeException.class)
+    public void addToCart_failed() throws Exception {
+        doThrow(new RuntimeException("Cart Repository Error")).when(cartRepo).save(any(Cart.class));
+        cartController.addToCart(mcr);
+    }
+    
     @Test
     public void removeFromCartTest() throws Exception {
         //given
