@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.demo.controllers.CartControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-21T15:03:58" hostname="Dongneukui-MacBookPro.local" time="0.471">
+  <properties/>
+  <testcase name="addToCartTest" classname="com.example.demo.controllers.CartControllerTest" time="0.465"/>
+  <testcase name="removeFromCartTest" classname="com.example.demo.controllers.CartControllerTest" time="0.002"/>
+  <testcase name="addToCart_failed" classname="com.example.demo.controllers.CartControllerTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
