@@ -16,7 +16,7 @@ public class MockConstants {
         ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
         modifyCartRequest.setUsername("east");
         modifyCartRequest.setItemId(1L);
-        modifyCartRequest.setQuantity(1);
+        modifyCartRequest.setQuantity(2);
         return modifyCartRequest;
 
     }
@@ -26,7 +26,7 @@ public class MockConstants {
         item.setId(1L);
         item.setName("testName");
         item.setDescription("testDescription");
-        item.setPrice(BigDecimal.valueOf(100));
+        item.setPrice(BigDecimal.valueOf(1000));
         return item;
     }
 
@@ -38,7 +38,6 @@ public class MockConstants {
 
     public static User getUserWithCart() {
         User user = new User();
-
         user.setId(1L);
         user.setUsername("east");
         user.setPassword("password");
@@ -46,6 +45,18 @@ public class MockConstants {
 
         return user;
     }
+
+    public static User getUser() {
+        User user = new User();
+        user.setId(1L);
+        user.setUsername("east");
+        user.setPassword("password");
+        user.setCart(new Cart());
+
+        return user;
+    }
+
+
 
 
 }

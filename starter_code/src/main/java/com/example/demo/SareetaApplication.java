@@ -10,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableJpaRepositories("com.example.demo.model.persistence.repositories") // telling Spring that this package contains our data repositories.
 @EntityScan("com.example.demo.model.persistence") // telling Spring that this package contains our data models.
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class}) // because we are doing a JWT authentication.
 public class SareetaApplication {
 
 	@Bean
